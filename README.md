@@ -1,74 +1,25 @@
-# Axeron Manager (Proof of Concept)
+# AxManager
 
-> **Axeron Manager (AxManager)** is a Proof of Concept (POC) for a self-created environment on Android that leverages ADB permissions to provide system-level control. This project explores the idea of creating a persistent, independent ADB-based execution layer within the system.
+本仓库是「AxManager」的安卓版本获取入口，附使用资料索引。
 
-[Switch to Chinese translation 切换到中文翻译](README_cn.md)
+## 安装文件资源（夸克网盘）
 
-## 💡 The Concept
-This project is a personal exploration into creating a dedicated **ADB Environment** on Android. Instead of just being a simple command runner, AxManager aims to establish a background infrastructure that can host plugins, manage system optimizations, and provide a unified interface for privileged operations—all without requiring full root access (though it can utilize root if available).
+> **AxManager 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/e76a7ed9b163](https://pan.quark.cn/s/e76a7ed9b163)
 
-## ✨ Features
-- 🏗️ **Internal ADB Environment**  
-  A self-contained environment designed to maintain and utilize ADB-level privileges.
-- 🖥️ **Shell Executor**  
-  Run shell commands with persistent sessions.  
-  - Supports **ADB / Non-Root execution**.  
-  - Optional **Root execution** for enhanced capabilities.  
+## 官方项目
 
-- ⚡ **Plugin (Unrooted Module)**  
-  A system to manage third-party modules within the unrooted environment. [Learn more](https://fahrez182.github.io/AxManager/plugin/what-is-plugin.html)  
+- 上游项目：[fahrez182/AxManager](https://github.com/fahrez182/AxManager)
 
-- 🌐 **WebUI Interface**  
-  Manage and interact with the system environment through a web-based interface.
+## 更多资料
 
-## 📱 Why this POC?
-- **Independence**: Aims to minimize reliance on external PCs for ADB tasks once set up.
-- **Environment-centric**: Focuses on creating a resident privileged layer rather than just one-off command execution.
-- **Accessibility**: Bringing "Root-like" capabilities to non-rooted devices through native system mechanisms.
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [和Shizuku有什么区别](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E5%92%8CShizuku%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.md)
+- [常见问题与启动失败排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E6%8E%92%E6%9F%A5.md)
+- [插件与WebUI使用入门](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E6%8F%92%E4%BB%B6%E4%B8%8EWebUI%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8.md)
+- [无线调试启动与配对教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E6%97%A0%E7%BA%BF%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8%E4%B8%8E%E9%85%8D%E5%AF%B9%E6%95%99%E7%A8%8B.md)
+- [电脑ADB启动方法](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/AxManager/%E7%94%B5%E8%84%91ADB%E5%90%AF%E5%8A%A8%E6%96%B9%E6%B3%95.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
-## 📖 Roadmap
-- [x] Wireless Debugging Activator.
-- [x] Command-line / Root Activator.
-- [x] Shell Executor basic support (ADB/Non-Root).
-- [x] Auto active when use Wireless Debugging (Test)
-- [x] [Plugin](https://fahrez182.github.io/AxManager/plugin/what-is-plugin.html) system for third-party extensions.  
-- [x] Developer Mode & Advanced Debugging tools.  
-- [ ] App optimization based on profiles.
+---
 
-## 🔧 Build & Install
-Clone the repository and build using Android Studio or Gradle:
-
-```bash
-git clone https://github.com/fahrez182/AxManager.git
-cd AxManager
-./gradlew :manager:assembleDebug
-```
-
-Install the manager app to your device via ADB:
-
-```bash
-adb install manager/build/outputs/apk/debug/manager-debug.apk
-```
-
-## 🤝 Contribution
-Contributions are welcome!  
-Feel free to open **issues**, submit **pull requests**, or start a discussion for new ideas and improvements.
-
-
-## 🙏 Credits
-- **[Magisk]()** "**BusyBox** and Plugin (Unrooted module) ideas"
-- **[Shizuku](https://github.com/RikkaApps/Shizuku) / [API](https://github.com/RikkaApps/Shizuku-API)** "Starting point and reference for learning Android IPC and ADB-based permission handling"
-- **[KernelSU](https://github.com/tiann/KernelSU) / [Next](https://github.com/KernelSU-Next/KernelSU-Next)** "Inspiration for the UI and WebUI features."
-
-## ⚠️ Notices & Legal Disclaimer
-This project includes adapted portions of code from:
-- Shizuku Manager (© Rikka Apps)
-  Licensed under the Apache License, Version 2.0
-  Repository: https://github.com/RikkaApps/Shizuku
-- Other open-source projects as credited above.
-
-AxManager does not include or distribute any original Shizuku Manager visual assets or claim to be an official replacement.
-All adapted code is used strictly for educational and experimental purposes, with clear attribution and compliance with the Apache License 2.0.
-
-## 📜 License
-Licensed under the [Apache License 2.0](LICENSE).
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/fahrez182/AxManager)。
